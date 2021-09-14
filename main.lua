@@ -4,7 +4,7 @@ MAX_INIMIGOS = 20
 
 Fred = {
     img = love.graphics.newImage("assets/fred-11.png"),
-    alt = 63,
+    alt = 60,
     larg = 41,
     x = TELA_LARG/2 -70, 
     y = TELA_ALT+41,
