@@ -43,7 +43,9 @@ function Criar_Inimigo()
         alt = 33,
         larg = 25,
         x = math.random(TELA_LARG) -40,
-        y = 0,
+        y = -40,
+        pesoX = math.random(-1,1),
+        pesoY = math.random(2,4)
     }
     table.insert(inimigos,Inimigo)
 end 
@@ -66,12 +68,14 @@ end
 
 function Move_Meteoros()
     for k,inimigo in ipairs(inimigos) do
-        inimigo.y = inimigo.y + 1
+        inimigo.y = inimigo.y + inimigo.pesoY
+        inimigo.x = inimigo.x + inimigo.pesoX
     end
     
 end
 
 function love.load()
+    math.randomseed(os.time())
     love.window.setMode(TELA_ALT,TELA_LARG, {resizable = false})
     love.window.setTitle("Fred contra os anti")
 
